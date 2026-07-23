@@ -4,8 +4,8 @@
   "generated_at_utc": "2026-07-23T07:47:35+00:00",
   "domain_count": 4744,
   "outputs": {
-    "karing": "adobe-block.json",
-    "mihomo_openclash_yaml": "adobe-block.yaml",
-    "mihomo_openclash_text": "adobe-block.txt"
+    "karing": "one-block.json",
+    "mihomo_openclash_yaml": "one-block.yaml",
+    "mihomo_openclash_text": "one-block.txt"
   }
 }

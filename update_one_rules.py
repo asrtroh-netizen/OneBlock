@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate full Adobe telemetry rule sets for Karing and Mihomo/OpenClash.
+"""Generate full One rule sets for Karing and Mihomo/OpenClash.
 
 Source: https://github.com/ignaciocastro/a-dove-is-dumb
 No third-party Python packages are required.
@@ -28,7 +28,7 @@ OUTPUT_DIR = Path(__file__).resolve().parent
 def download_source() -> tuple[str, str]:
     errors: list[str] = []
     headers = {
-        "User-Agent": "Mozilla/5.0 Adobe-Rules-Updater/1.0",
+        "User-Agent": "Mozilla/5.0 One-Rules-Updater/1.0",
         "Accept": "text/plain,*/*",
     }
     for url in SOURCES:
@@ -79,7 +79,7 @@ def write_karing_json(domains: list[str]) -> Path:
             }
         ],
     }
-    path = OUTPUT_DIR / "adobe-block.json"
+    path = OUTPUT_DIR / "one-block.json"
     path.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -91,19 +91,19 @@ def write_karing_json(domains: list[str]) -> Path:
 def write_mihomo_yaml(domains: list[str]) -> Path:
     # Classical Mihomo rule-provider format. Use behavior: classical, format: yaml.
     lines = [
-        "# Full Adobe telemetry blocklist",
+        "# Full One blocklist",
         "# Generated from ignaciocastro/a-dove-is-dumb",
         "payload:",
     ]
     lines.extend(f"  - DOMAIN,{domain}" for domain in domains)
-    path = OUTPUT_DIR / "adobe-block.yaml"
+    path = OUTPUT_DIR / "one-block.yaml"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return path
 
 
 def write_mihomo_text(domains: list[str]) -> Path:
     # Optional Mihomo text provider format.
-    path = OUTPUT_DIR / "adobe-block.txt"
+    path = OUTPUT_DIR / "one-block.txt"
     path.write_text(
         "\n".join(f"DOMAIN,{domain}" for domain in domains) + "\n",
         encoding="utf-8",
@@ -121,9 +121,9 @@ def write_metadata(source_url: str, domains: list[str]) -> Path:
         .isoformat(),
         "domain_count": len(domains),
         "outputs": {
-            "karing": "adobe-block.json",
-            "mihomo_openclash_yaml": "adobe-block.yaml",
-            "mihomo_openclash_text": "adobe-block.txt",
+            "karing": "one-block.json",
+            "mihomo_openclash_yaml": "one-block.yaml",
+            "mihomo_openclash_text": "one-block.txt",
         },
     }
     path = OUTPUT_DIR / "metadata.json"

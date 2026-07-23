@@ -1,12 +1,12 @@
-name: Update Adobe rules
+name: Update One rules
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - update_adobe_rules.py
-      - .github/workflows/update-adobe-rules.yml
+      - update_one_rules.py
+      - .github/workflows/update-one-rules.yml
   schedule:
     - cron: "23 3 * * *"
 
@@ -26,17 +26,17 @@ jobs:
           python-version: "3.12"
 
       - name: Generate full rule sets
-        run: python update_adobe_rules.py
+        run: python update_one_rules.py
 
       - name: Commit updated rules
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add adobe-block.json adobe-block.yaml adobe-block.txt metadata.json
+          git add one-block.json one-block.yaml one-block.txt metadata.json
           if git diff --cached --quiet; then
             echo "No rule changes"
             exit 0
           fi
-          git commit -m "chore: update full Adobe rules"
+          git commit -m "chore: update full One rules"
           git push
