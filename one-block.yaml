@@ -1,4 +1,4 @@
-# Full Adobe telemetry blocklist
+# Full One blocklist
 # Generated from ignaciocastro/a-dove-is-dumb
 payload:
   - DOMAIN,ic.adobe.io
