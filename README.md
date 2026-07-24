@@ -48,5 +48,8 @@ rules:
 ## 自动更新
 
 GitHub Actions 每天自动检查一次。只有上游域名列表发生变化时才会提交新文件。
+### Release 镜像
 
-
+```text
+https://github.com/asrtroh-netizen/OneBlock/releases/download/onetools-cdn-assets/one-blocklist.json
+```
