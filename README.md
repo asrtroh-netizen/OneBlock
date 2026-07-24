@@ -48,3 +48,13 @@ rules:
 ## 自动更新
 
 GitHub Actions 每天自动检查一次。只有上游域名列表发生变化时才会提交新文件。
+
+## OneTools 电话拦截库（onetools.blocklist.v1）
+
+供姊妹 App **OneTools / OneCaller** 拉取本地精确/前缀黑白名单，**与上方域名分流规则独立**。
+
+`	ext
+https://raw.githubusercontent.com/asrtroh-netizen/OneBlock/main/phone/one-blocklist.json
+`
+
+路径：phone/one-blocklist.json。更新后 OneTools「来电拦截」页可点「从 One CDN / 镜像拉取」。
