@@ -1,8 +1,8 @@
 {
   "source": "https://raw.githubusercontent.com/ignaciocastro/a-dove-is-dumb/main/clash.yaml",
   "upstream_repository": "https://github.com/ignaciocastro/a-dove-is-dumb",
-  "generated_at_utc": "2026-09-30T09:50:19+00:00",
-  "domain_count": 5690,
+  "generated_at_utc": "2026-10-01T10:17:36+00:00",
+  "domain_count": 5692,
   "outputs": {
     "karing": "one-block.json",
     "mihomo_openclash_yaml": "one-block.yaml",
